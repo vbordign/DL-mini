@@ -1,5 +1,6 @@
 # Mini Deep Learning Framework
 EPFL EE-559 Deep Learning: Second Project, Spring 2021
+
 Author: Virginia Bordignon
 
 ## Requirements
