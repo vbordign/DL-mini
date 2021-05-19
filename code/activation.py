@@ -1,6 +1,17 @@
 from modules import *
 
 class ReLU(Module):
+    '''
+    Creates the ReLU activation module.
+
+    Methods
+    -------
+    forward :
+        runs a forward pass
+    backward :
+        accumulates gradient for backward pass
+
+    '''
     def __init__(self):
         super().__init__()
 
@@ -14,6 +25,17 @@ class ReLU(Module):
 
 
 class Tanh(Module):
+    '''
+    Creates the Tanh activation module.
+
+    Methods
+    -------
+    forward :
+        runs a forward pass
+    backward :
+        accumulates gradient for backward pass
+
+    '''
     def __init__(self):
         super().__init__()
 
@@ -26,6 +48,17 @@ class Tanh(Module):
 
 
 class Sigmoid(Module):
+    '''
+    Creates the Sigmoid activation module.
+
+    Methods
+    -------
+    forward :
+        runs a forward pass
+    backward :
+        accumulates gradient for backward pass
+
+    '''
     def __init__(self):
         super().__init__()
 

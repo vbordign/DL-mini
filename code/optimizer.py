@@ -2,6 +2,14 @@ from torch import empty
 import math
 
 class SGD():
+    '''
+    Creates the Stochastic Gradient Descent module.
+
+    Methods
+    -------
+    step:
+        executes the SGD update
+    '''
     def __init__(self, params, lr=0.001):
         self.params = params
         self.lr = lr
@@ -12,6 +20,14 @@ class SGD():
 
 
 class Adam():
+    '''
+    Creates the Adam module.
+
+    Methods
+    -------
+    step:
+        executes the Adam update
+    '''
     def __init__(self, params, lr=0.001, betas=(0.9, 0.999), eps = 1e-8):
         self.params = params
         self.lr = lr
@@ -38,6 +54,14 @@ class Adam():
 
 
 class Adagrad():
+    '''
+    Creates the Adagrad module.
+
+    Methods
+    -------
+    step:
+        executes the Adagrad update
+    '''
     def __init__(self, params, lr=0.001, eps = 1e-8):
         self.params = params
         self.lr = lr
@@ -55,6 +79,14 @@ class Adagrad():
             param[0] -= self.lr * delta
 
 class Adadelta():
+    '''
+    Creates the Adadelta module.
+
+    Methods
+    -------
+    step:
+        executes the Adadelta update
+    '''
     def __init__(self, params, beta=0.95, eps=1e-8):
         self.params = params
         self.beta = beta
@@ -79,6 +111,14 @@ class Adadelta():
 
 
 class RMSprop():
+    '''
+    Creates the RMSprop module.
+
+    Methods
+    -------
+    step:
+        executes the RMSprop update
+    '''
     def __init__(self, params, lr=0.001, beta=0.95, eps=1e-8):
         self.params = params
         self.lr = lr

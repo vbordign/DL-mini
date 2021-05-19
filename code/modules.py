@@ -2,6 +2,19 @@ from torch import empty
 from initialization import *
 
 class Module(object):
+    '''
+    Creates the a parent Module with forward and backward operations.
+
+    Methods
+    -------
+    forward :
+        runs a forward pass
+    backward :
+        accumulates gradient for backward pass
+    param :
+        returns parameters
+    '''
+
     def forward(self, *input):
         raise NotImplementedError
 
@@ -13,6 +26,27 @@ class Module(object):
 
 
 class Linear(Module):
+    '''
+    Creates the Linear layer module.
+
+    Attributes
+    ----------
+    bias_flag: bool
+        flag indicating if there is a bias
+    w: List(FloatTensor)
+        weight matrix and gradient
+    bias: List(FloatTensor)
+        bias vector and gradient
+
+    Methods
+    -------
+    forward :
+        runs a forward pass
+    backward :
+        accumulates gradient for backward pass
+    param :
+        returns parameters and gradient
+    '''
     def __init__(self, in_features, out_features, bias_flag=True, init = 'uniform'):
         super().__init__()
         self.bias_flag = bias_flag
@@ -50,6 +84,23 @@ class Linear(Module):
 
 
 class Sequential(Module):
+    '''
+    Creates the Sequential container module.
+
+    Attributes
+    ----------
+    modules = List(Module)
+        list of Module instances
+
+    Methods
+    -------
+    forward :
+        runs a forward pass
+    backward :
+        accumulates gradient for backward pass
+    param :
+        returns parameters and gradient
+    '''
     def __init__(self, *args):
         super(Sequential, self).__init__()
         self.modules = []

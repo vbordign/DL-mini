@@ -1,6 +1,14 @@
 from modules import *
 
 class LossMSE(Module):
+    '''
+    Creates the MSE Loss module.
+
+    Methods
+    -------
+    loss :
+        computes the MSE loss, and the gradient of the loss
+    '''
     def __init__(self):
         super().__init__()
 
@@ -10,6 +18,14 @@ class LossMSE(Module):
         return loss, grad
 
 class CrossEntropy(Module):
+    '''
+    Creates the Cross Entropy Loss module.
+
+    Methods
+    -------
+    loss :
+        computes the Cross Entropy loss, and the gradient of the loss
+    '''
     def __init__(self):
         super().__init__()
 
